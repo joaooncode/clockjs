@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relogio</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #282c34;
+      color: white;
+      font-family: "Arial", sans-serif;
+    }
+    #watch {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+    #hours,
+    #minutes,
+    #seconds {
+      font-size: 30px;
+      margin: 5px;
+    }
+  </style>
+  <body>
+    <div id="watch"></div>
+    <div id="hours"></div>
+    <div id="minutes"></div>
+    <div id="seconds"></div>
+    <script>
+      function displayWatch() {
+        const current_date = new Date();
+        const hours = current_date.getHours();
+        const minutes = current_date.getMinutes();
+        const seconds = current_date.getSeconds();
+
+        fullWatch = `${hours} : ${minutes} : ${seconds}`;
+        document.getElementById("watch").textContent = fullWatch;
+      }
+
+      setInterval(displayWatch, 1000);
+      displayWatch();
+    </script>
+  </body>
+</html>
